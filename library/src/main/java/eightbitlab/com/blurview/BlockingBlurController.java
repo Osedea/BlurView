@@ -22,7 +22,7 @@ import android.view.ViewTreeObserver;
  * <p>
  * Blur is done in the main thread.
  */
-class BlockingBlurController implements BlurController {
+public class BlockingBlurController implements BlurController {
     private static final String TAG = BlockingBlurController.class.getSimpleName();
     //Bitmap size should be divisible by 16 to meet stride requirement
     private static final int ROUNDING_VALUE = 16;
@@ -81,7 +81,7 @@ class BlockingBlurController implements BlurController {
      *                 Can be Activity's root content layout (android.R.id.content)
      *                 or some of your custom root layouts.
      */
-    BlockingBlurController(@NonNull View blurView, @NonNull ViewGroup rootView) {
+    public BlockingBlurController(@NonNull View blurView, @NonNull ViewGroup rootView) {
         this.rootView = rootView;
         this.blurView = blurView;
         this.blurAlgorithm = new NoOpBlurAlgorithm();
